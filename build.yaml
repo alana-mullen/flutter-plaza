@@ -1,0 +1,35 @@
+targets:
+  $default:
+    sources:
+      #exclude:
+        #- lib/**.dart.macro
+      - "pubspec.yaml"
+      - $package$
+      - lib/**
+      - test/**.dart
+      - integration_test/**.dart
+      - model/**.dart
+    builders:
+      auto_route_generator:auto_route_generator: # this for @RoutePage
+        options:
+          enable_cached_builds: true
+        generate_for:
+          #- lib/**_view.dart
+          - lib/**_page.dart
+          #- lib/navigation/nav_router.dart
+      auto_route_generator:auto_router_generator: # this for @AutoRouterConfig
+        options:
+          enable_cached_builds: true
+        #generate_for:
+          #- lib/navigation/nav_router.dart
+      #json_serializable:
+        #options:
+          #explicit_to_json: true
+          #field_rename: snake
+          #include_if_null: false
+      riverpod_generator:
+        options:
+          const_type: 'auto'
+          auto_dispose: true
+        generate_for:
+          - lib/**.dart
