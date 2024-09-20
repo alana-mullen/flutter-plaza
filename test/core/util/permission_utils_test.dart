@@ -15,8 +15,6 @@ import 'permission_utils_test.mocks.dart';
   ],
 )
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
-
   late MockDeviceInfoPlugin mockDeviceInfoPlugin;
   late MockAndroidDeviceInfo mockAndroidDeviceInfo;
   late MockAndroidBuildVersion mockAndroidBuildVersion;

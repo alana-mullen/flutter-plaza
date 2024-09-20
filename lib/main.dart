@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig:
           navRouter.config(navigatorObservers: () => [AutoRouteObserver()]),
-      title: 'Flutter Demo',
+      title: 'Flutter Plaza',
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
