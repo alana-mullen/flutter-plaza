@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -20,10 +21,7 @@ import 'package:plaza/profile/view/user_profile_page.dart' as _i5;
 /// [_i1.BottomNavigationPage]
 class BottomNavigationRoute extends _i6.PageRouteInfo<void> {
   const BottomNavigationRoute({List<_i6.PageRouteInfo>? children})
-      : super(
-          BottomNavigationRoute.name,
-          initialChildren: children,
-        );
+    : super(BottomNavigationRoute.name, initialChildren: children);
 
   static const String name = 'BottomNavigationRoute';
 
@@ -39,10 +37,7 @@ class BottomNavigationRoute extends _i6.PageRouteInfo<void> {
 /// [_i2.CategoriesPage]
 class CategoriesRoute extends _i6.PageRouteInfo<void> {
   const CategoriesRoute({List<_i6.PageRouteInfo>? children})
-      : super(
-          CategoriesRoute.name,
-          initialChildren: children,
-        );
+    : super(CategoriesRoute.name, initialChildren: children);
 
   static const String name = 'CategoriesRoute';
 
@@ -62,13 +57,10 @@ class ProductDetailRoute extends _i6.PageRouteInfo<ProductDetailRouteArgs> {
     required int productId,
     List<_i6.PageRouteInfo>? children,
   }) : super(
-          ProductDetailRoute.name,
-          args: ProductDetailRouteArgs(
-            key: key,
-            productId: productId,
-          ),
-          initialChildren: children,
-        );
+         ProductDetailRoute.name,
+         args: ProductDetailRouteArgs(key: key, productId: productId),
+         initialChildren: children,
+       );
 
   static const String name = 'ProductDetailRoute';
 
@@ -76,19 +68,13 @@ class ProductDetailRoute extends _i6.PageRouteInfo<ProductDetailRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<ProductDetailRouteArgs>();
-      return _i3.ProductDetailPage(
-        key: args.key,
-        productId: args.productId,
-      );
+      return _i3.ProductDetailPage(key: args.key, productId: args.productId);
     },
   );
 }
 
 class ProductDetailRouteArgs {
-  const ProductDetailRouteArgs({
-    this.key,
-    required this.productId,
-  });
+  const ProductDetailRouteArgs({this.key, required this.productId});
 
   final _i7.Key? key;
 
@@ -104,10 +90,7 @@ class ProductDetailRouteArgs {
 /// [_i4.ProductsPage]
 class ProductsRoute extends _i6.PageRouteInfo<void> {
   const ProductsRoute({List<_i6.PageRouteInfo>? children})
-      : super(
-          ProductsRoute.name,
-          initialChildren: children,
-        );
+    : super(ProductsRoute.name, initialChildren: children);
 
   static const String name = 'ProductsRoute';
 
@@ -123,10 +106,7 @@ class ProductsRoute extends _i6.PageRouteInfo<void> {
 /// [_i5.UserProfilePage]
 class UserProfileRoute extends _i6.PageRouteInfo<void> {
   const UserProfileRoute({List<_i6.PageRouteInfo>? children})
-      : super(
-          UserProfileRoute.name,
-          initialChildren: children,
-        );
+    : super(UserProfileRoute.name, initialChildren: children);
 
   static const String name = 'UserProfileRoute';
 

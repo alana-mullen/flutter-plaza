@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:open_filex/open_filex.dart';
+import 'package:plaza/core/view/widget/gap/vertical_gap.dart';
 import 'package:plaza/products/model/product_response.dart';
 import 'package:plaza/products/provider/product_detail_provider.dart';
 
@@ -79,7 +80,7 @@ class _ProductDetailPageState extends ConsumerState<ProductDetailPage>
                 product.value?.description ?? '',
                 style: const TextStyle(fontSize: 20),
               ),
-              const SizedBox(height: 50),
+              VerticalGap(50),
               ProductDetailCarousel(images: product.value?.images),
             ],
           ),

@@ -1,3 +1,5 @@
+import 'dart:isolate';
+
 import 'package:flutter/foundation.dart';
 import 'package:plaza/categories/model/category_response.dart';
 
@@ -9,9 +11,12 @@ class CategoriesRepository {
   Future<List<CategoryResponse>> getCategories() async {
     try {
       RestService client = restClient.getService<RestService>();
-      final response = await client.getCategories();
 
-      return await ApiResponseHelper.returnResponse(response);
+      return await Isolate.run(() async {
+        final response = await client.getCategories();
+
+        return await ApiResponseHelper.returnResponse(response);
+      });
     } catch (ex, stacktrace) {
       debugPrint('Exception: $ex');
       debugPrint('Stacktrace: $stacktrace');

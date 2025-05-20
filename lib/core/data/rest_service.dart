@@ -10,15 +10,15 @@ part 'rest_service.chopper.dart';
 abstract class RestService extends ChopperService {
   static RestService create([ChopperClient? client]) => _$RestService(client);
 
-  @Get(path: 'products')
+  @GET(path: 'products')
   Future<Response<List<ProductResponse>>> getProducts();
 
-  @Get(path: 'products/{id}')
+  @GET(path: 'products/{id}')
   Future<Response<ProductResponse>> getProductDetail(@Path('id') int id);
 
-  @Get(path: 'categories')
+  @GET(path: 'categories')
   Future<Response<List<CategoryResponse>>> getCategories();
 
-  @Get(path: 'users/{id}')
+  @GET(path: 'users/{id}')
   Future<Response<UserResponse>> getUserDetail(@Path('id') int id);
 }

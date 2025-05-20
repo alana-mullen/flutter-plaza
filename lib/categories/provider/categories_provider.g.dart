@@ -10,8 +10,10 @@ String _$categoriesHash() => r'53ac0cc370d203f184a2b774dbace8f185a9ebf0';
 
 /// See also [Categories].
 @ProviderFor(Categories)
-final categoriesProvider = AutoDisposeAsyncNotifierProvider<Categories,
-    List<CategoryResponse>>.internal(
+final categoriesProvider = AutoDisposeAsyncNotifierProvider<
+  Categories,
+  List<CategoryResponse>
+>.internal(
   Categories.new,
   name: r'categoriesProvider',
   debugGetCreateSourceHash:
@@ -22,4 +24,4 @@ final categoriesProvider = AutoDisposeAsyncNotifierProvider<Categories,
 
 typedef _$Categories = AutoDisposeAsyncNotifier<List<CategoryResponse>>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

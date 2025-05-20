@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plaza/core/view/widget/gap/vertical_gap.dart';
 
 class LoadingView extends StatelessWidget {
   const LoadingView({
@@ -35,7 +36,8 @@ class LoadingView extends StatelessWidget {
               fontSize: 20,
             ),
           ),
-          const SizedBox(height: 16),
+          //const SizedBox(height: 16),
+          VerticalGap(16),
           Expanded(
             child: CircularProgressIndicator.adaptive(
               backgroundColor: indicatorColor ?? Colors.blue,

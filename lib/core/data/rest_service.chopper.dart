@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'rest_service.dart';
@@ -20,44 +21,28 @@ final class _$RestService extends RestService {
   @override
   Future<Response<List<ProductResponse>>> getProducts() {
     final Uri $url = Uri.parse('products');
-    final Request $request = Request(
-      'GET',
-      $url,
-      client.baseUrl,
-    );
+    final Request $request = Request('GET', $url, client.baseUrl);
     return client.send<List<ProductResponse>, ProductResponse>($request);
   }
 
   @override
   Future<Response<ProductResponse>> getProductDetail(int id) {
     final Uri $url = Uri.parse('products/${id}');
-    final Request $request = Request(
-      'GET',
-      $url,
-      client.baseUrl,
-    );
+    final Request $request = Request('GET', $url, client.baseUrl);
     return client.send<ProductResponse, ProductResponse>($request);
   }
 
   @override
   Future<Response<List<CategoryResponse>>> getCategories() {
     final Uri $url = Uri.parse('categories');
-    final Request $request = Request(
-      'GET',
-      $url,
-      client.baseUrl,
-    );
+    final Request $request = Request('GET', $url, client.baseUrl);
     return client.send<List<CategoryResponse>, CategoryResponse>($request);
   }
 
   @override
   Future<Response<UserResponse>> getUserDetail(int id) {
     final Uri $url = Uri.parse('users/${id}');
-    final Request $request = Request(
-      'GET',
-      $url,
-      client.baseUrl,
-    );
+    final Request $request = Request('GET', $url, client.baseUrl);
     return client.send<UserResponse, UserResponse>($request);
   }
 }

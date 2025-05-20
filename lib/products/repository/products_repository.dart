@@ -1,3 +1,5 @@
+import 'dart:isolate';
+
 import 'package:flutter/foundation.dart';
 import 'package:plaza/products/model/product_response.dart';
 
@@ -9,9 +11,12 @@ class ProductsRepository {
   static Future<List<ProductResponse>> getProducts() async {
     try {
       RestService client = restClient.getService<RestService>();
-      final response = await client.getProducts();
 
-      return await ApiResponseHelper.returnResponse(response);
+      return await Isolate.run(() async {
+        final response = await client.getProducts();
+
+        return await ApiResponseHelper.returnResponse(response);
+      });
     } catch (ex, stacktrace) {
       debugPrint('Exception: $ex');
       debugPrint('Stacktrace: $stacktrace');

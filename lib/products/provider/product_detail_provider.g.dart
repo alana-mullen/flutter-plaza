@@ -33,9 +33,7 @@ abstract class _$ProductDetail
     extends BuildlessAutoDisposeAsyncNotifier<ProductResponse?> {
   late final int productId;
 
-  FutureOr<ProductResponse?> build(
-    int productId,
-  );
+  FutureOr<ProductResponse?> build(int productId);
 }
 
 /// See also [ProductDetail].
@@ -48,21 +46,15 @@ class ProductDetailFamily extends Family<AsyncValue<ProductResponse?>> {
   const ProductDetailFamily();
 
   /// See also [ProductDetail].
-  ProductDetailProvider call(
-    int productId,
-  ) {
-    return ProductDetailProvider(
-      productId,
-    );
+  ProductDetailProvider call(int productId) {
+    return ProductDetailProvider(productId);
   }
 
   @override
   ProductDetailProvider getProviderOverride(
     covariant ProductDetailProvider provider,
   ) {
-    return call(
-      provider.productId,
-    );
+    return call(provider.productId);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -81,24 +73,24 @@ class ProductDetailFamily extends Family<AsyncValue<ProductResponse?>> {
 }
 
 /// See also [ProductDetail].
-class ProductDetailProvider extends AutoDisposeAsyncNotifierProviderImpl<
-    ProductDetail, ProductResponse?> {
+class ProductDetailProvider
+    extends
+        AutoDisposeAsyncNotifierProviderImpl<ProductDetail, ProductResponse?> {
   /// See also [ProductDetail].
-  ProductDetailProvider(
-    int productId,
-  ) : this._internal(
-          () => ProductDetail()..productId = productId,
-          from: productDetailProvider,
-          name: r'productDetailProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$productDetailHash,
-          dependencies: ProductDetailFamily._dependencies,
-          allTransitiveDependencies:
-              ProductDetailFamily._allTransitiveDependencies,
-          productId: productId,
-        );
+  ProductDetailProvider(int productId)
+    : this._internal(
+        () => ProductDetail()..productId = productId,
+        from: productDetailProvider,
+        name: r'productDetailProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$productDetailHash,
+        dependencies: ProductDetailFamily._dependencies,
+        allTransitiveDependencies:
+            ProductDetailFamily._allTransitiveDependencies,
+        productId: productId,
+      );
 
   ProductDetailProvider._internal(
     super._createNotifier, {
@@ -116,9 +108,7 @@ class ProductDetailProvider extends AutoDisposeAsyncNotifierProviderImpl<
   FutureOr<ProductResponse?> runNotifierBuild(
     covariant ProductDetail notifier,
   ) {
-    return notifier.build(
-      productId,
-    );
+    return notifier.build(productId);
   }
 
   @override
@@ -139,7 +129,7 @@ class ProductDetailProvider extends AutoDisposeAsyncNotifierProviderImpl<
 
   @override
   AutoDisposeAsyncNotifierProviderElement<ProductDetail, ProductResponse?>
-      createElement() {
+  createElement() {
     return _ProductDetailProviderElement(this);
   }
 
@@ -157,6 +147,8 @@ class ProductDetailProvider extends AutoDisposeAsyncNotifierProviderImpl<
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin ProductDetailRef
     on AutoDisposeAsyncNotifierProviderRef<ProductResponse?> {
   /// The parameter `productId` of this provider.
@@ -164,12 +156,14 @@ mixin ProductDetailRef
 }
 
 class _ProductDetailProviderElement
-    extends AutoDisposeAsyncNotifierProviderElement<ProductDetail,
-        ProductResponse?> with ProductDetailRef {
+    extends
+        AutoDisposeAsyncNotifierProviderElement<ProductDetail, ProductResponse?>
+    with ProductDetailRef {
   _ProductDetailProviderElement(super.provider);
 
   @override
   int get productId => (origin as ProductDetailProvider).productId;
 }
+
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
