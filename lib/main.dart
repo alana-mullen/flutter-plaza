@@ -14,9 +14,9 @@ void main() async {
 
   runApp(
     DevicePreview(
-      enabled: kIsWeb,
-      defaultDevice: Devices.ios.iPhone13ProMax,
+      builder: (context) => ProviderScope(child: MyApp()),
       isToolbarVisible: true,
+      defaultDevice: Devices.ios.iPhone13ProMax,
       tools: [
         DeviceSection(
           model: true,
@@ -25,7 +25,7 @@ void main() async {
           virtualKeyboard: false,
         ),
       ],
-      builder: (context) => ProviderScope(child: MyApp()),
+      enabled: kIsWeb,
     ),
   );
 }
@@ -42,12 +42,12 @@ class MyApp extends StatelessWidget {
       routerConfig: navRouter.config(
         navigatorObservers: () => [AutoRouteObserver()],
       ),
+      builder: DevicePreview.appBuilder,
       title: 'Flutter Plaza',
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
     );
   }

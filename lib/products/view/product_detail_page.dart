@@ -51,11 +51,7 @@ class _ProductDetailPageState extends ConsumerState<ProductDetailPage>
     return Scaffold(
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) =>
-            <Widget>[
-          ProductDetailHeader(
-            productId: widget.productId,
-          ),
-        ],
+            <Widget>[ProductDetailHeader(productId: widget.productId)],
         body: Padding(
           padding: const EdgeInsets.all(30),
           child: Column(
@@ -67,7 +63,7 @@ class _ProductDetailPageState extends ConsumerState<ProductDetailPage>
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      '£${product.value?.price}',
+                      '£${product.value?.price ?? ''}',
                       style: const TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
@@ -89,7 +85,7 @@ class _ProductDetailPageState extends ConsumerState<ProductDetailPage>
     );
   }
 
-  _handleOpenFile(String? path) {
+  void _handleOpenFile(String? path) {
     debugPrint('Open file: $path');
     try {
       if (path == null) {

@@ -20,7 +20,7 @@ abstract class ProductResponse with _$ProductResponse {
     List<String>? images,
   }) = _ProductResponse;
 
-  get featuredImage => ImageUtils.parseImageUrl(images?.firstOrNull);
+  String get featuredImage => ImageUtils.parseImageUrl(images?.firstOrNull);
 
   factory ProductResponse.fromJson(Map<String, dynamic> json) =>
       _$ProductResponseFromJson(json);

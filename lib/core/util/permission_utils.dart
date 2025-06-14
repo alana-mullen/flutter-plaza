@@ -12,8 +12,11 @@ class PermissionUtils {
   static DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
 
   static bool get _isAndroid => platform.isAndroid;
+
   static bool get _isIOS => platform.isIOS;
-  static get _androidInfo async => await deviceInfoPlugin.androidInfo;
+
+  static Future<AndroidDeviceInfo> get _androidInfo async =>
+      await deviceInfoPlugin.androidInfo;
 
   static Future<bool> checkPermission() async {
     if (_isIOS) {

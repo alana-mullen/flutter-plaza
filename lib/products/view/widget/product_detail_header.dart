@@ -7,8 +7,9 @@ class ProductDetailHeader extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final ProductResponse? productDetail = ref
-        .watch(productDetailProvider(productId).select((value) => value.value));
+    final ProductResponse? productDetail = ref.watch(
+      productDetailProvider(productId).select((value) => value.value),
+    );
     const headerSize = 300.0;
 
     return SliverAppBar(
@@ -31,16 +32,14 @@ class ProductDetailHeader extends ConsumerWidget {
       flexibleSpace: FlexibleSpaceBar(
         title: Text(
           productDetail?.title ?? '',
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 16.0,
-          ),
+          style: const TextStyle(color: Colors.white, fontSize: 16.0),
         ),
         background: CachedNetworkImage(
           imageUrl: productDetail?.featuredImage ?? '',
           width: double.infinity,
           height: headerSize,
           fit: BoxFit.cover,
+          maxHeightDiskCache: 300,
         ),
         centerTitle: true,
       ),

@@ -18,26 +18,29 @@ class ProductListTile extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
         ),
         clipBehavior: Clip.antiAlias,
-        child: Column(children: [
-          Expanded(
-            child: CachedNetworkImage(
-              imageUrl: data?.featuredImage ?? '',
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-          ),
-          ListTile(
-            title: Text(
-              data?.title ?? '',
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+        child: Column(
+          children: [
+            Expanded(
+              child: CachedNetworkImage(
+                imageUrl: data?.featuredImage ?? '',
+                width: double.infinity,
+                fit: BoxFit.cover,
               ),
-              overflow: TextOverflow.ellipsis,
             ),
-            subtitle: Text('£${data?.price}'),
-          ),
-        ]),
+            ListTile(
+              title: Text(
+                data?.title ?? '',
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
+              ),
+              subtitle: Text('£${data?.price ?? ''}'),
+            ),
+          ],
+        ),
       ),
     );
   }

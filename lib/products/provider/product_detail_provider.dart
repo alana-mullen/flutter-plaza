@@ -14,7 +14,7 @@ class ProductDetail extends _$ProductDetail {
     return null;
   }
 
-  get fetchProductDetail async {
+  Future<void> get fetchProductDetail async {
     state = const AsyncValue.loading();
     state = await AsyncValue.guard(() async {
       return Future.value(

@@ -18,22 +18,18 @@ class CategoriesPage extends ConsumerWidget {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Categories'),
       body: RefreshIndicator(
-        onRefresh: () async =>
-            ref.read(categoriesProvider.notifier).fetchCategories,
+        onRefresh: () => ref.read(categoriesProvider.notifier).fetchCategories,
         child: CustomScrollView(
           slivers: [
             SliverAsyncValueWidget(
               value: categories,
               data: (data) => SliverGrid(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    return CategoryListTile(
-                      key: ValueKey(data[index].id),
-                      data: data[index],
-                    );
-                  },
-                  childCount: data.length,
-                ),
+                delegate: SliverChildBuilderDelegate((context, index) {
+                  return CategoryListTile(
+                    key: ValueKey(data[index].id),
+                    data: data[index],
+                  );
+                }, childCount: data.length),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 8,

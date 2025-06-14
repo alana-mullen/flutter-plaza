@@ -6,7 +6,7 @@ part of 'download_image_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$downloadImageHash() => r'6cde2fc57b5804e93c90f761d940d555f2dc5769';
+String _$downloadImageHash() => r'8f81c09961614a462a9457cd5bbe02a692716a26';
 
 /// See also [DownloadImage].
 @ProviderFor(DownloadImage)
@@ -14,10 +14,9 @@ final downloadImageProvider =
     AutoDisposeAsyncNotifierProvider<DownloadImage, String?>.internal(
       DownloadImage.new,
       name: r'downloadImageProvider',
-      debugGetCreateSourceHash:
-          const bool.fromEnvironment('dart.vm.product')
-              ? null
-              : _$downloadImageHash,
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$downloadImageHash,
       dependencies: null,
       allTransitiveDependencies: null,
     );

@@ -6,7 +6,7 @@ part of 'profile_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$profileHash() => r'dfbfa90b32ad3ad94def0062ab691e611f87dcb1';
+String _$profileHash() => r'b3dfc59089c84fe2b23b1b1b17d41fb8302e7dee';
 
 /// See also [Profile].
 @ProviderFor(Profile)
@@ -14,8 +14,9 @@ final profileProvider =
     AutoDisposeAsyncNotifierProvider<Profile, UserResponse?>.internal(
       Profile.new,
       name: r'profileProvider',
-      debugGetCreateSourceHash:
-          const bool.fromEnvironment('dart.vm.product') ? null : _$profileHash,
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$profileHash,
       dependencies: null,
       allTransitiveDependencies: null,
     );

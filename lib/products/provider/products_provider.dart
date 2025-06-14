@@ -14,7 +14,7 @@ class Products extends _$Products {
     return List.empty();
   }
 
-  get fetchProducts async {
+  Future<void> get fetchProducts async {
     state = const AsyncValue.loading();
     state = await AsyncValue.guard(() async {
       return Future.value(await ProductsRepository.getProducts());

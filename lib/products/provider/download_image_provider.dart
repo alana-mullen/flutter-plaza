@@ -14,7 +14,7 @@ class DownloadImage extends _$DownloadImage {
     return null;
   }
 
-  downloadImage(String image) async {
+  Future<void> downloadImage(String image) async {
     debugPrint('downloadImage Download image');
     const String imageFileName = 'image.jpg';
 

@@ -14,12 +14,10 @@ class Profile extends _$Profile {
     return null;
   }
 
-  get fetchProfile async {
+  Future<void> get fetchProfile async {
     state = const AsyncValue.loading();
     state = await AsyncValue.guard(() async {
-      return Future.value(
-        await ProfileRepository.getProfile(),
-      );
+      return Future.value(await ProfileRepository.getProfile());
     });
   }
 }

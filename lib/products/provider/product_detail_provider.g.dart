@@ -6,7 +6,7 @@ part of 'product_detail_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$productDetailHash() => r'784c3d24c16c5d8e0d90a14959ba154148c06e03';
+String _$productDetailHash() => r'33ab26bd9f2a7aa3fe7837382e9443a1d96b0c42';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -82,10 +82,9 @@ class ProductDetailProvider
         () => ProductDetail()..productId = productId,
         from: productDetailProvider,
         name: r'productDetailProvider',
-        debugGetCreateSourceHash:
-            const bool.fromEnvironment('dart.vm.product')
-                ? null
-                : _$productDetailHash,
+        debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+            ? null
+            : _$productDetailHash,
         dependencies: ProductDetailFamily._dependencies,
         allTransitiveDependencies:
             ProductDetailFamily._allTransitiveDependencies,
