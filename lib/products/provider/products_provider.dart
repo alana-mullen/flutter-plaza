@@ -5,7 +5,7 @@ import '../repository/products_repository.dart';
 
 part 'products_provider.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 class Products extends _$Products {
   @override
   Future<List<ProductResponse>> build() async {
@@ -16,8 +16,11 @@ class Products extends _$Products {
 
   Future<void> get fetchProducts async {
     state = const AsyncValue.loading();
-    state = await AsyncValue.guard(() async {
-      return Future.value(await ProductsRepository.getProducts());
-    });
+    state = await AsyncValue.guard(
+      () async => await ref.read(productsRepositoryProvider).getProducts(),
+    );
   }
 }
+
+@riverpod
+ProductsRepository productsRepository(Ref ref) => ProductsRepository();

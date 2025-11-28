@@ -6,24 +6,55 @@ part of 'categories_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(Categories)
+const categoriesProvider = CategoriesProvider._();
+
+final class CategoriesProvider
+    extends $AsyncNotifierProvider<Categories, List<CategoryResponse>> {
+  const CategoriesProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'categoriesProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$categoriesHash();
+
+  @$internal
+  @override
+  Categories create() => Categories();
+}
+
 String _$categoriesHash() => r'9f091ec550b4bb6cacd1c32db0b778647425bea9';
 
-/// See also [Categories].
-@ProviderFor(Categories)
-final categoriesProvider =
-    AutoDisposeAsyncNotifierProvider<
-      Categories,
-      List<CategoryResponse>
-    >.internal(
-      Categories.new,
-      name: r'categoriesProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$categoriesHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
-
-typedef _$Categories = AutoDisposeAsyncNotifier<List<CategoryResponse>>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+abstract class _$Categories extends $AsyncNotifier<List<CategoryResponse>> {
+  FutureOr<List<CategoryResponse>> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref =
+        this.ref
+            as $Ref<AsyncValue<List<CategoryResponse>>, List<CategoryResponse>>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<
+                AsyncValue<List<CategoryResponse>>,
+                List<CategoryResponse>
+              >,
+              AsyncValue<List<CategoryResponse>>,
+              Object?,
+              Object?
+            >;
+    element.handleValue(ref, created);
+  }
+}

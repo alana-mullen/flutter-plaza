@@ -8,7 +8,7 @@ import '../../core/data/rest_client.dart';
 import '../../core/data/rest_service.dart';
 
 class ProductDetailRepository {
-  static Future<ProductResponse?> getProductDetail(int productId) async {
+  Future<ProductResponse?> getProductDetail(int productId) async {
     try {
       RestService client = restClient.getService<RestService>();
 

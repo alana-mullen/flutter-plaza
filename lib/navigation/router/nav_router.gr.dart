@@ -21,11 +21,7 @@ import 'package:plaza/profile/view/user_profile_page.dart' as _i5;
 /// [_i1.BottomNavigationPage]
 class BottomNavigationRoute extends _i6.PageRouteInfo<void> {
   const BottomNavigationRoute({List<_i6.PageRouteInfo>? children})
-    : super(
-        BottomNavigationRoute.name,
-        initialChildren: children,
-        argsEquality: false,
-      );
+    : super(BottomNavigationRoute.name, initialChildren: children);
 
   static const String name = 'BottomNavigationRoute';
 
@@ -41,11 +37,7 @@ class BottomNavigationRoute extends _i6.PageRouteInfo<void> {
 /// [_i2.CategoriesPage]
 class CategoriesRoute extends _i6.PageRouteInfo<void> {
   const CategoriesRoute({List<_i6.PageRouteInfo>? children})
-    : super(
-        CategoriesRoute.name,
-        initialChildren: children,
-        argsEquality: false,
-      );
+    : super(CategoriesRoute.name, initialChildren: children);
 
   static const String name = 'CategoriesRoute';
 
@@ -68,7 +60,6 @@ class ProductDetailRoute extends _i6.PageRouteInfo<ProductDetailRouteArgs> {
          ProductDetailRoute.name,
          args: ProductDetailRouteArgs(key: key, productId: productId),
          initialChildren: children,
-         argsEquality: false,
        );
 
   static const String name = 'ProductDetailRoute';
@@ -93,13 +84,23 @@ class ProductDetailRouteArgs {
   String toString() {
     return 'ProductDetailRouteArgs{key: $key, productId: $productId}';
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! ProductDetailRouteArgs) return false;
+    return key == other.key && productId == other.productId;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ productId.hashCode;
 }
 
 /// generated route for
 /// [_i4.ProductsPage]
 class ProductsRoute extends _i6.PageRouteInfo<void> {
   const ProductsRoute({List<_i6.PageRouteInfo>? children})
-    : super(ProductsRoute.name, initialChildren: children, argsEquality: false);
+    : super(ProductsRoute.name, initialChildren: children);
 
   static const String name = 'ProductsRoute';
 
@@ -115,11 +116,7 @@ class ProductsRoute extends _i6.PageRouteInfo<void> {
 /// [_i5.UserProfilePage]
 class UserProfileRoute extends _i6.PageRouteInfo<void> {
   const UserProfileRoute({List<_i6.PageRouteInfo>? children})
-    : super(
-        UserProfileRoute.name,
-        initialChildren: children,
-        argsEquality: false,
-      );
+    : super(UserProfileRoute.name, initialChildren: children);
 
   static const String name = 'UserProfileRoute';
 

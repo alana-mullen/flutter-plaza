@@ -19,6 +19,8 @@ class ProductListTile extends StatelessWidget {
         ),
         clipBehavior: Clip.antiAlias,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          spacing: 0,
           children: [
             Expanded(
               child: CachedNetworkImage(

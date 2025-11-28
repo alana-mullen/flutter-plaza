@@ -16,10 +16,14 @@ class ProductDetail extends _$ProductDetail {
 
   Future<void> get fetchProductDetail async {
     state = const AsyncValue.loading();
-    state = await AsyncValue.guard(() async {
-      return Future.value(
-        await ProductDetailRepository.getProductDetail(productId),
-      );
-    });
+    state = await AsyncValue.guard(
+      () async => await ref
+          .read(productDetailRepositoryProvider)
+          .getProductDetail(productId),
+    );
   }
 }
+
+@riverpod
+ProductDetailRepository productDetailRepository(Ref ref) =>
+    ProductDetailRepository();

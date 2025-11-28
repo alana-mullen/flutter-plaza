@@ -6,21 +6,50 @@ part of 'profile_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(Profile)
+const profileProvider = ProfileProvider._();
+
+final class ProfileProvider
+    extends $AsyncNotifierProvider<Profile, UserResponse?> {
+  const ProfileProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'profileProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$profileHash();
+
+  @$internal
+  @override
+  Profile create() => Profile();
+}
+
 String _$profileHash() => r'b3dfc59089c84fe2b23b1b1b17d41fb8302e7dee';
 
-/// See also [Profile].
-@ProviderFor(Profile)
-final profileProvider =
-    AutoDisposeAsyncNotifierProvider<Profile, UserResponse?>.internal(
-      Profile.new,
-      name: r'profileProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$profileHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
-
-typedef _$Profile = AutoDisposeAsyncNotifier<UserResponse?>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+abstract class _$Profile extends $AsyncNotifier<UserResponse?> {
+  FutureOr<UserResponse?> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<AsyncValue<UserResponse?>, UserResponse?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<UserResponse?>, UserResponse?>,
+              AsyncValue<UserResponse?>,
+              Object?,
+              Object?
+            >;
+    element.handleValue(ref, created);
+  }
+}

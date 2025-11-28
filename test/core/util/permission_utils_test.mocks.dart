@@ -30,6 +30,7 @@ import 'package:mockito/src/dummies.dart' as _i11;
 // ignore_for_file: unnecessary_parenthesis
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
+// ignore_for_file: invalid_use_of_internal_member
 
 class _FakeAndroidDeviceInfo_0 extends _i1.SmartFake
     implements _i2.AndroidDeviceInfo {
@@ -371,23 +372,22 @@ class MockAndroidDeviceInfo extends _i1.Mock implements _i2.AndroidDeviceInfo {
           as bool);
 
   @override
+  int get freeDiskSize =>
+      (super.noSuchMethod(Invocation.getter(#freeDiskSize), returnValue: 0)
+          as int);
+
+  @override
+  int get totalDiskSize =>
+      (super.noSuchMethod(Invocation.getter(#totalDiskSize), returnValue: 0)
+          as int);
+
+  @override
   List<String> get systemFeatures =>
       (super.noSuchMethod(
             Invocation.getter(#systemFeatures),
             returnValue: <String>[],
           )
           as List<String>);
-
-  @override
-  String get serialNumber =>
-      (super.noSuchMethod(
-            Invocation.getter(#serialNumber),
-            returnValue: _i11.dummyValue<String>(
-              this,
-              Invocation.getter(#serialNumber),
-            ),
-          )
-          as String);
 
   @override
   bool get isLowRamDevice =>
