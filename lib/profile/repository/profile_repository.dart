@@ -8,7 +8,7 @@ import '../../core/data/rest_client.dart';
 import '../../core/data/rest_service.dart';
 
 class ProfileRepository {
-  static Future<UserResponse> getProfile() async {
+  Future<UserResponse> getProfile() async {
     try {
       RestService client = restClient.getService<RestService>();
 

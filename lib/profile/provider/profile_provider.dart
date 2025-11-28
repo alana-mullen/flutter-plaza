@@ -16,8 +16,11 @@ class Profile extends _$Profile {
 
   Future<void> get fetchProfile async {
     state = const AsyncValue.loading();
-    state = await AsyncValue.guard(() async {
-      return Future.value(await ProfileRepository.getProfile());
-    });
+    state = await AsyncValue.guard(
+      () async => await ref.read(profileRepositoryProvider).getProfile(),
+    );
   }
 }
+
+@riverpod
+ProfileRepository profileRepository(Ref ref) => ProfileRepository();

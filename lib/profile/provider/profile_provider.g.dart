@@ -33,7 +33,7 @@ final class ProfileProvider
   Profile create() => Profile();
 }
 
-String _$profileHash() => r'b3dfc59089c84fe2b23b1b1b17d41fb8302e7dee';
+String _$profileHash() => r'55807a25966c8316832560a7c778c6348269a358';
 
 abstract class _$Profile extends $AsyncNotifier<UserResponse?> {
   FutureOr<UserResponse?> build();
@@ -53,3 +53,50 @@ abstract class _$Profile extends $AsyncNotifier<UserResponse?> {
     element.handleValue(ref, created);
   }
 }
+
+@ProviderFor(profileRepository)
+const profileRepositoryProvider = ProfileRepositoryProvider._();
+
+final class ProfileRepositoryProvider
+    extends
+        $FunctionalProvider<
+          ProfileRepository,
+          ProfileRepository,
+          ProfileRepository
+        >
+    with $Provider<ProfileRepository> {
+  const ProfileRepositoryProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'profileRepositoryProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$profileRepositoryHash();
+
+  @$internal
+  @override
+  $ProviderElement<ProfileRepository> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  ProfileRepository create(Ref ref) {
+    return profileRepository(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(ProfileRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<ProfileRepository>(value),
+    );
+  }
+}
+
+String _$profileRepositoryHash() => r'dbf1adbf76b68a77f1975222bd72c33c8400ae3b';

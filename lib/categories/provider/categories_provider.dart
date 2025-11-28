@@ -16,8 +16,11 @@ class Categories extends _$Categories {
 
   Future<void> get fetchCategories async {
     state = const AsyncValue.loading();
-    state = await AsyncValue.guard(() async {
-      return Future.value(await CategoriesRepository().getCategories());
-    });
+    state = await AsyncValue.guard(
+      () async => await ref.read(categoriesRepositoryProvider).getCategories(),
+    );
   }
 }
+
+@riverpod
+CategoriesRepository categoriesRepository(Ref ref) => CategoriesRepository();
